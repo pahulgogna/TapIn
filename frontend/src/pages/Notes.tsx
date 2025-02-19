@@ -21,7 +21,7 @@ function Notes() {
         <h2 className="text-3xl font-bold text-[#18cb96] text-center mb-6">Your Notes</h2>
 
         <div className="grid grid-cols-1 gap-4">
-          {notes.contents.map((note: NoteSchema, index: Number) => (
+          {notes.contents.map((note: NoteSchema, index: number) => (
             <div
               key={note.id}
               className="bg-black/60 border border-gray-600 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl"
