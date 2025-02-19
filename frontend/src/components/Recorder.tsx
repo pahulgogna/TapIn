@@ -23,7 +23,7 @@ function useRecorder() {
       const audioTracks = mediaStream.getAudioTracks()
 
       if (audioTracks.length > 0) {
-        const audioStream = new MediaStream(audioTracks) // Media stream with only audio
+        const audioStream = new MediaStream(audioTracks)
         setAudio(audioStream)
         console.log("started recording", audioStream)
       } else {
@@ -54,9 +54,6 @@ function useRecorder() {
     }, [audio])
 
     useEffect(() => {
-
-
-
       if (recorder) {
         recorder.start(100)
       }
@@ -85,7 +82,13 @@ function useRecorder() {
       await setup()
     }
 
-    return { formData, startRecording, stopRecording }
+    async function reset() {
+      setFormData(null)
+      setAudio(null)
+      chunksRef.current.slice(0,0)
+    }
+
+    return { formData, startRecording, stopRecording, reset }
 
 }
 
@@ -93,7 +96,7 @@ function useRecorder() {
 function Recorder() {
 
   const [recording, setRecording] = useState(false)
-  const { formData, startRecording, stopRecording } = useRecorder()
+  const { formData, startRecording, stopRecording, reset } = useRecorder()
   const [response, setResponse] = useState("")
 
   const startRec = async () => {
@@ -132,21 +135,18 @@ function Recorder() {
     }
   }
 
-  useEffect(() => {
-
-      if (formData) {
-        console.log("File ready to send:", formData)
-      }
-
-    }, [formData])
+  async function Reset(){
+    reset()
+    setRecording(false)
+  }
 
 
   return (
       <>
         {response.length ? null : <div className="flex justify-center gap-5">
 
-            <Button className="hover:cursor-pointer p-2 rounded bg-blue-400" onClick={async () => {
-              recording ? stopRec() : startRec()
+            <Button className={`hover:cursor-pointer p-2 rounded bg-blue-400 ${ recording ? ' animate-bounce ' : ''}`} onClick={async () => {
+              formData ? Reset() :recording ? stopRec() : startRec()
             }}>
               {formData ? "cancel" : recording ? 'Stop' : 'Start'}
             </Button>

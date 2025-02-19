@@ -8,6 +8,8 @@ import Appbar from './components/Appbar'
 import Dashboard from './pages/Dashboard'
 import Notes from './pages/Notes'
 import MyNote from './pages/MyNote'
+import Landing from './pages/Landing'
+import Learnmore from './pages/Learnmore'
 
 
 function App() {
@@ -18,12 +20,14 @@ function App() {
         <RecoilRoot>
           <Appbar/>
           <Routes>
+            <Route path="/" element={<Landing />} />
             <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/recorder" element={<Recorder />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/notes" element={<Notes />} />
             <Route path="/notes/:id" element={<MyNote />} />
+            <Route path="/learnmore" element={<Learnmore />} />
           </Routes>
         </RecoilRoot>
       </BrowserRouter>

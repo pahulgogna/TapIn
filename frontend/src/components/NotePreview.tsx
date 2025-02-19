@@ -22,10 +22,14 @@ function NotePreview({
     <div className='border cursor-pointer mt-5 p-5 rounded-xl text-left tracking-wider shadow-md' onClick={() => {
         window.location.href = `/notes/${id}`
     }}>
-        <div className="text-2xl font-bold">
+        <div className="text-2xl font-bold text-[#18cb96]">
             {title}
+            
         </div>
+        <div className="text-white text-xl">
         {contentPreview}
+        </div>
+        
     </div>
   )
 }
