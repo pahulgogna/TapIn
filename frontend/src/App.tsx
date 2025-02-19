@@ -1,0 +1,34 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import './App.css'
+import Recorder from './components/Recorder'
+import SignupPage from './pages/Signup'
+import Login from './pages/Login'
+import { RecoilRoot } from 'recoil'
+import Appbar from './components/Appbar'
+import Dashboard from './pages/Dashboard'
+import Notes from './pages/Notes'
+import MyNote from './pages/MyNote'
+
+
+function App() {
+
+  return (
+    <div>
+      <BrowserRouter>
+        <RecoilRoot>
+          <Appbar/>
+          <Routes>
+            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/recorder" element={<Recorder />} />
+            <Route path="/signup" element={<SignupPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/notes" element={<Notes />} />
+            <Route path="/notes/:id" element={<MyNote />} />
+          </Routes>
+        </RecoilRoot>
+      </BrowserRouter>
+    </div>
+  )
+}
+
+export default App
