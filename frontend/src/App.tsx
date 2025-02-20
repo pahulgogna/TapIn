@@ -12,6 +12,8 @@ import Landing from './pages/Landing'
 import Learnmore from './pages/Learnmore'
 import Contact from './pages/Contact';
 import FAQSection from './pages/Faq'
+import CreateTeam from './pages/CreateTeam'
+import YourTeam from './pages/YourTeam'
 
 
 function App() {
@@ -32,6 +34,10 @@ function App() {
             <Route path="/learnmore" element={<Learnmore />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQSection />} />
+            <Route path="/createteam" element={<CreateTeam/>} />
+            <Route path="/yourteam" element={<YourTeam/>} />
+
+
 
 
           </Routes>
