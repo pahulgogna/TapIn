@@ -2,7 +2,9 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef } from "react";
-
+import Footer from "./Footer";
+import Pricing from "./Premium";
+import FAQSection from "./Faq";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -226,61 +228,60 @@ function Landing() {
           </motion.div>
         </div>
 
+
+        <FAQSection/>
+
         {/* CTA Button with Animation */}
         <motion.button
           className="mt-12 px-6 py-3 bg-[#18cb96] text-black font-semibold rounded-full hover:bg-[#14a67f] transition duration-300"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
-          See Pricing
+          See Services
         </motion.button>
       </section>
+      <section id="services" className="w-full max-w-6xl mt-12 text-center">
+        <motion.h2 className="text-5xl font-bold">Services</motion.h2>
+        <motion.p className="text-lg text-gray-400 mt-5 mb-5">
+          Our wide range of services to choose from
+        </motion.p>
 
-      <section id="services" className="w-full max-w-6xl mt-32 text-center">
-      <motion.h2
-        className="text-5xl font-bold"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        Services
-      </motion.h2>
-      <motion.p
-        className="text-lg text-gray-400 mt-2"
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
-        Our wide range of services to choose from
-      </motion.p>
-
-      {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
-        {[
-          { title: "Resource Viewer", desc: "Access and manage shared resources easily." },
-          { title: "Audio Transcribing", desc: "Convert speech into accurate text automatically." },
-          { title: "Smart Summaries (Coming Soon)", desc: "Summarize content efficiently using AI." },
-          { title: "Personalized Study (Coming Soon)", desc: "Get tailored study material based on your needs." },
-        ].map((service, index) => (
-          <motion.div
-            key={index}
-            ref={(el) => (serviceRefs.current[index] = el)}
-            className="bg-[#121212] p-10 rounded-2xl border border-gray-700 shadow-lg transition duration-300 h-48 flex flex-col justify-center items-center"
-            whileHover={{ scale: 1.05, borderColor: "#18cb96", boxShadow: "0px 0px 20px #18cb96" }}
-          >
-            <motion.h3
-              className="text-2xl font-semibold transition duration-300"
-              whileHover={{ color: "#18cb96" }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-40">
+          {[
+            { title: "Resource Viewer", desc: "Access and manage shared resources easily." },
+            { title: "Audio Transcribing", desc: "Convert speech into accurate text automatically." },
+            { title: "Smart Summaries (Coming Soon)", desc: "Summarize content efficiently using AI." },
+            { title: "Personalized Study (Coming Soon)", desc: "Get tailored study material based on your needs." },
+          ].map((service, index) => (
+            <motion.div
+              key={index}
+              ref={(el) => (serviceRefs.current[index] = el)}
+              className="bg-[#121212] p-10 rounded-2xl border border-gray-700 shadow-lg transition duration-300 h-48 flex flex-col justify-center items-center"
+              whileHover={{ scale: 1.05, borderColor: "#18cb96", boxShadow: "0px 0px 20px #18cb96" }}
             >
-              {service.title}
-            </motion.h3>
-            <p className="text-gray-400 mt-2">{service.desc}</p>
-          </motion.div>
-        ))}
-      </div>
-      <NewsletterSignup />
-    </section>
+              <motion.h3
+                className="text-2xl font-semibold transition duration-300"
+                whileHover={{ color: "#18cb96" }}
+              >
+                {service.title}
+              </motion.h3>
+              <p className="text-gray-400 mt-2">{service.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+          <div className="mb-10">
+            <Pricing />
+          </div>
+          <div className="newsletter">
+          <motion.h2 className={`text-5xl font-bold join-us`}>JOIN-US</motion.h2>
+          <NewsletterSignup />
+          </div>
+
+    <Footer/>
     </div>
+    
   )
 }
 

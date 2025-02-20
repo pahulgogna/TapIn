@@ -10,6 +10,8 @@ import Notes from './pages/Notes'
 import MyNote from './pages/MyNote'
 import Landing from './pages/Landing'
 import Learnmore from './pages/Learnmore'
+import Contact from './pages/Contact';
+import FAQSection from './pages/Faq'
 
 
 function App() {
@@ -28,6 +30,10 @@ function App() {
             <Route path="/notes" element={<Notes />} />
             <Route path="/notes/:id" element={<MyNote />} />
             <Route path="/learnmore" element={<Learnmore />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<FAQSection />} />
+
+
           </Routes>
         </RecoilRoot>
       </BrowserRouter>
