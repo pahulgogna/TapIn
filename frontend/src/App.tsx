@@ -13,6 +13,9 @@ import Learnmore from './pages/Learnmore'
 import Contact from './pages/Contact';
 import FAQSection from './pages/Faq'
 import Team from './pages/Team'
+import CreateTeam from './pages/CreateTeam'
+import YourTeam from './pages/YourTeam'
+
 
 
 function App() {
@@ -34,6 +37,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/faq" element={<FAQSection />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/createteam" element={<CreateTeam/>} />
+            <Route path="/yourteam" element={<YourTeam/>} />
           </Routes>
         </RecoilRoot>
       </BrowserRouter>
