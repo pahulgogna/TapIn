@@ -30,7 +30,7 @@ function Note({ title, content }
     <>
 
       <div className='flex justify-between'>
-        <h1 className='text-3xl font-bold'>{title}</h1>
+        <h1 className='text-3xl font-bold'>Your Notes</h1>
 
         <ArrowDownToLine onClick={downloadPDF} className={` cursor-pointer ${loading ? "animate-bounce" : null}`}/>
 
