@@ -90,7 +90,7 @@ function Appbar() {
               transition={{ duration: 1 }}
               className="absolute right-0 mt-1 w-32 bg-black/80 text-white text-center py-2 rounded-lg shadow-lg border border-gray-700"
             >
-              <Link to={"/notes"}>Notes: {notes.contents.length}</Link>
+              <a href={"/notes"}>Notes: {notes.contents.length}</a>
             </motion.div>
           )}
         </div>

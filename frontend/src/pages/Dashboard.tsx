@@ -1,4 +1,3 @@
-  import Card from "../components/basics/Card";
   import Recorder from "../components/Recorder";
 
   function Dashboard() {
