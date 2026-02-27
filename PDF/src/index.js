@@ -6,6 +6,9 @@ import { writeFileSync, unlinkSync } from 'fs';
 import path, { join } from 'path';
 import { fileURLToPath } from 'url';
 import cors from 'cors';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const corsOptions = {
     origin: '*',
@@ -23,9 +26,9 @@ const __dirname = path.dirname(__filename);
 app.use(express.json()); 
 
 cloudinary.config({
-    cloud_name: "dhgo1ihsp",
-    api_key: "326286395157834",
-    api_secret: "7QQPsRQJsN-pFq5DpW9_IcNnJSE",
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
 });
 
 

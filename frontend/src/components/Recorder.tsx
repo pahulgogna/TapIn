@@ -164,7 +164,7 @@ function Recorder() {
               {
                 response 
                 && 
-                <div className="p-2 rounded text-center py-5 text-xl font-semibold">
+                <div className="p-2 rounded text-center py-5 text-xl text-white font-semibold">
                   {response}
                 </div>
               }

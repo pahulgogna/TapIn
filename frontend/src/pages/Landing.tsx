@@ -114,28 +114,7 @@ function Landing() {
         backgroundAttachment: "fixed",
       }}
     >
-      {/* Fixed Navbar */}
-      {/* <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90%] max-w-5xl flex justify-between items-center px-8 py-2 mt-4 bg-black/80 backdrop-blur-md rounded-full border border-gray-700 shadow-lg z-50"
-      >
-        <img src="/images/logo.png" alt="Logo" className="h-15 ml-6" />
-        <div className="flex space-x-8 text-lg">
-          <a href="#why-us" className="hover:text-[#18cb96] transition duration-200">Why Us</a>
-          <a href="#mission" className="hover:text-[#18cb96] transition duration-200">Mission</a>
-          <a href="#services" className="hover:text-[#18cb96] transition duration-200">Services</a>
-          <a href="#signup" className="hover:text-[#18cb96] transition duration-200">Sign-Up</a>
-        </div>
-        <motion.button
-          className="px-6 py-2 bg-black text-white border border-gray-600 rounded-full hover:bg-gray-800 transition duration-300 mr-6"
-          whileHover={{ scale: 1.05 }}
-        >
-          Let’s Talk ↗
-        </motion.button>
-      </motion.nav> */}
-      {/* Hero Section */}
+
       <motion.div
         className="text-center mt-80"
         initial={{ opacity: 0, y: 50 }}

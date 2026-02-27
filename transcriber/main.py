@@ -6,7 +6,6 @@ import redis
 import json
 client = redis.Redis(host='localhost', port=6379, db=0)
 import whisper
-import requests
 
 def transcribe_audio_whisper(audio_path):
     model = whisper.load_model("base")
@@ -49,10 +48,11 @@ def convert_audio_to_text():
         print(e)
         return jsonify({"error": str(e)}), 500
     finally:
-        if os.path.exists(audio_file_path):
-            os.remove(audio_file_path)
-        if os.path.exists(wav_file_path):
-            os.remove(wav_file_path)
+        # if os.path.exists(audio_file_path):
+        #     os.remove(audio_file_path)
+        # if os.path.exists(wav_file_path):
+        #     os.remove(wav_file_path)
+        ...
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,10 +2,10 @@ import ReactMarkdown from 'react-markdown';
 
 const MarkdownRenderer = ({ markdownText } : {
     markdownText: string
-}) => {
-  const formattedText = markdownText
+}) => { 
+  const formattedText = markdownText;
 
-  return <ReactMarkdown>{formattedText}</ReactMarkdown>;
+  return <ReactMarkdown className="container">{formattedText}</ReactMarkdown>;
 };
 
 export default MarkdownRenderer;

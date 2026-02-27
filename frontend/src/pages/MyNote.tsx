@@ -41,8 +41,8 @@ function MyNote() {
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
       style={{ backgroundImage: "url('/images/background.png')" }}
     >
-      <div className="w-full max-w-5xl bg-black/15 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-700 mt-30 text-white">
-        <Note title={note.title} content={note.content} />
+      <div className="w-11/12 bg-black/15 backdrop-blur-md p-8 rounded-xl shadow-lg border border-gray-700 mt-30 text-white">
+        <Note title={note.title} content={note.content.replace(/      /g, `&nbsp;&nbsp;`).replace(/\n/g, `\n\n\n`)} />
       </div>
     </div>
   );

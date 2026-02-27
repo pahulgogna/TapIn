@@ -7,7 +7,7 @@
         style={{ backgroundImage: "url('images/background.png')" }}
       >
         <div 
-          className="backdrop-blur-lg bg-white/30 p-10 rounded-2xl shadow-xl w-96 text-center
+          className="backdrop-blur-lg bg-slate-800/30 p-10 rounded-2xl shadow-xl w-96 text-center
           transition-transform transform scale-100 hover:scale-105 hover:shadow-2xl
           duration-300 ease-in-out animate-fadeIn"
         >

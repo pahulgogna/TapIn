@@ -28,14 +28,13 @@ function Note({ title, content }
 
   return (
     <>
-
       <div className='flex justify-between'>
         <h1 className='text-3xl font-bold'>Your Notes</h1>
 
         <ArrowDownToLine onClick={downloadPDF} className={` cursor-pointer ${loading ? "animate-bounce" : null}`}/>
 
       </div>
-      <div className='border mt-5 p-5 rounded-xl text-left tracking-wider'>
+      <div className='border mt-5 p-5 rounded-xl'>
           <MarkdownRenderer markdownText={content}/>
       </div>
     </>
